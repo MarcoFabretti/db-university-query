@@ -66,10 +66,10 @@ where degree_id = 53
 
 -- anche quello sopra poteva essere fatto in questo modo e questo come quello sopra
 -- Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
-select d2.name as 'degree', d.name as 'department'
+select d2.name as 'degree', d.name as 'department', d2.level
 from degrees d2, departments d
-where d2.department_id=d.id
-having d.name = 'Dipartimento di Neuroscienze'
+where d2.department_id=d.id 
+having d.name = 'Dipartimento di Neuroscienze' and d2.level = 'magistrale'
 ;
 
 -- Selezionare tutti i corsi in cui insegna Fulvio Amato
